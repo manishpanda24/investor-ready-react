@@ -1073,14 +1073,99 @@ h1.thero-title em{font-family:'Instrument Serif',serif;font-style:italic;font-we
 .app-shell[data-page="t1"] #landing,
 .app-shell[data-page="t2"] #landing,
 .app-shell[data-page="t3"] #landing,
-.app-shell[data-page="about"] #landing { display: none; }
+.app-shell[data-page="about"] #landing,
+.app-shell[data-page="apply"] #landing,
+.app-shell[data-page="call"] #landing { display: none; }
 .app-shell[data-page="t1"] #t1-page,
 .app-shell[data-page="t2"] #t2-page,
 .app-shell[data-page="t3"] #t3-page,
 .app-shell[data-page="about"] #about-page { display: block; }
-.app-shell[data-page="about"] .foot { display: none; }
+.app-shell[data-page="apply"] #apply-page,
+.app-shell[data-page="call"] #call-page { display: block; }
+.app-shell[data-page="about"] .foot,
+.app-shell[data-page="apply"] .foot,
+.app-shell[data-page="call"] .foot { display: none; }
 .app-shell[data-page="about"] #about-page .about { background: #fff; }
 button, a { touch-action: manipulation; }
+
+.inquiry {
+  min-height: calc(100vh - 92px);
+  padding: 96px 0;
+  background:
+    linear-gradient(rgba(11, 79, 108, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 79, 108, 0.035) 1px, transparent 1px),
+    #fff;
+  background-size: 64px 64px;
+}
+
+.inquiry-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 0.8fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.inquiry-form {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 22px 48px rgba(11, 34, 48, 0.08);
+  display: grid;
+  gap: 18px;
+}
+
+.inquiry-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--teal-deep);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 13px 14px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inquiry-form input:focus,
+.inquiry-form select:focus,
+.inquiry-form textarea:focus {
+  border-color: var(--turquoise);
+  box-shadow: 0 0 0 4px rgba(31, 184, 176, 0.14);
+}
+
+.inquiry-form textarea {
+  resize: vertical;
+}
+
+.inquiry-form .btn {
+  justify-content: center;
+  border: none;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .inquiry-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .inquiry-form {
+    padding: 24px;
+  }
+}
 
 /* Professional typography pass: keep one consistent font family across the site. */
 body,
