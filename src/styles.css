@@ -1262,6 +1262,7 @@ body {
 
 /* ---------- containers ---------- */
 .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.wrap-trust{margin:0 auto;padding:0 32px}
 .section{padding:96px 0}
 .section-tight{padding:64px 0}
 
@@ -1366,7 +1367,7 @@ h1.display em{
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   background:var(--cream);
-  padding:28px 0;
+  padding:32px 0;
 }
 .trust-row{
   display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;
@@ -1376,15 +1377,75 @@ h1.display em{
   text-transform:uppercase;letter-spacing:0.2em;color:var(--ink-soft);
   white-space:nowrap;
 }
-.trust-stats{display:flex;gap:48px;flex-wrap:wrap}
-.tstat{display:flex;flex-direction:column}
-.tstat .num{
-  font-family:'Fraunces',serif;font-weight:700;
-  font-size:28px;color:var(--teal-deep);line-height:1;
-  letter-spacing:-0.02em;
-}
-.tstat .lbl{font-size:13px;color:var(--ink-soft);margin-top:4px}
 
+.trust-stats {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border: 1px solid #E8E8E8;
+  border-radius: 34px;
+  overflow: hidden;
+  background: #fff;
+  max-width: 1680px;
+  margin: 0 auto;
+}
+
+.tstat {
+  padding: 34px 22px;
+  text-align: center;
+  min-width: 0;
+}
+
+.tstat:not(:last-child) {
+  border-right: 1px solid #E8E8E8;
+}
+
+.tstat .num {
+  display: block;
+  font-family: 'Fraunces', serif !important;
+  font-size: 3.1rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  margin-bottom: 14px;
+  color: #0E4C5C;
+  white-space: nowrap;
+}
+
+.tstat .lbl {
+  display: block;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: rgba(14, 76, 92, 0.75);
+  font-weight: 600;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+/* Colors */
+
+.tstat:nth-child(1) .num {
+  color: #0E4C5C;
+}
+
+.tstat:nth-child(2) .num {
+  color: #14C2B0;
+}
+
+.tstat:nth-child(3) .num {
+  color: #0E4C5C;
+}
+
+.tstat:nth-child(4) .num {
+  color: #F2C200;
+}
+
+.tstat:nth-child(5) .num {
+  color: #14C2B0;
+}
+
+.tstat:nth-child(6) .num {
+  color: #0E4C5C;
+}
 /* ---------- PROBLEM section ---------- */
 .problem{background:var(--cream);padding:96px 0;border-bottom:1px solid var(--line)}
 .section-head{
